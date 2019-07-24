@@ -16,6 +16,10 @@
 def triangle(a, b, c)
   triangle = [a, b, c]
 
+  raise TriangleError if triangle.uniq == [0]
+  triangle.each { |value| raise TriangleError if value.negative? }
+  raise TriangleError if a + b <= c || a + c <= b || b + c <= a
+
   if triangle.uniq.length == 3
     return :scalene
   end
