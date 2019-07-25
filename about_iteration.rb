@@ -82,24 +82,26 @@ class AboutIteration < Neo::Koan
 
   def test_inject_will_blow_your_mind
     result = [2, 3, 4].inject(0) { |sum, item| sum + item }
-    assert_equal __, result
+    assert_equal 9, result
 
     result2 = [2, 3, 4].inject(1) { |product, item| product * item }
-    assert_equal __, result2
+    assert_equal 24, result2
 
     # Extra Credit:
     # Describe in your own words what inject does.
+    # Injeta um valor no primeiro parâmetro e executa uma operação interagindo com os elementos do array, armazenando o
+    # retorno tamém no primeiro parâmetro e por fim o retorna.
   end
 
   def test_all_iteration_methods_work_on_any_collection_not_just_arrays
     # Ranges act like a collection
     result = (1..3).map { |item| item + 10 }
-    assert_equal __, result
+    assert_equal [11, 12, 13], result
 
     # Files act like a collection of lines
     File.open("example_file.txt") do |file|
       upcase_lines = file.map { |line| line.strip.upcase }
-      assert_equal __, upcase_lines
+      assert_equal ['THIS', 'IS', 'A', 'TEST'], upcase_lines
     end
 
     # NOTE: You can create your own collections that work with each,
@@ -116,6 +118,8 @@ class AboutIteration < Neo::Koan
   #
   #   file = File.open(filename)
   #   # code to read 'file'
+  #
+  # Resposta: Pois não é necessário armazenar o conteúdo do arquivo em uma variável.
   #
   # When you get to the "AboutSandwichCode" koan, recheck your answer.
 
