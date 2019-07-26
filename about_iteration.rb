@@ -119,7 +119,7 @@ class AboutIteration < Neo::Koan
   #   file = File.open(filename)
   #   # code to read 'file'
   #
-  # Resposta: Pois não é necessário armazenar o conteúdo do arquivo em uma variável.
+  # Resposta: Pois precisamos das linhas do arquivo separadamente.
   #
   # When you get to the "AboutSandwichCode" koan, recheck your answer.
 
